@@ -28,3 +28,7 @@ You can check out the **package.json** file to see the different scripts you can
 | Role  | Name | Github |
 | ------------- | ------------- | ------------- |
 | Developer  | Leevan DAVID  | [namuuu](https://github.com/namuuu) |
+| Developer  | Noé FRANCOIS  | [Nowayyyyyy](https://github.com/Nowayyyyyy) |
+| Developer  | Tomas SALVADO ROBALO  | [CaptainBidou](https://github.com/CaptainBidou) |
+| Developer  | Tomas TRENY  | [Viixyy](https://github.com/Viixyy) |
+| Developer  | Lukas GRANDO  | [LukasG62](https://github.com/LukasG62) |
