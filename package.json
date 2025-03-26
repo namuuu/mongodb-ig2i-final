@@ -5,7 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "hello": "npx tsx scripts/hello.ts",
-    "faker": "npx tsx scripts/faker_use.ts"
+    "faker": "npx tsx scripts/faker_use.ts",
+    "fill": "npx tsx scripts/fillDatabase.ts"
   },
   "repository": {
     "type": "git",
