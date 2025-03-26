@@ -14,7 +14,7 @@ Now, you need to import the correct libraries:
 npm init -y
 npm i tsx
 npm i mongodb
-npm i @faker-js/js
+npm install @faker-js/faker --save-dev
 ```
 And you should be all set up!
 To run the project, you can use the npm scripts. For example:
