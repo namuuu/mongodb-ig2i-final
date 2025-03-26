@@ -1,0 +1,23 @@
+{
+  "name": "mongodb-ig2i-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "hello": "npx tsx scripts/hello.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/namuuu/mongodb-ig2i-final.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/namuuu/mongodb-ig2i-final/issues"
+  },
+  "homepage": "https://github.com/namuuu/mongodb-ig2i-final#readme",
+  "dependencies": {
+    "mongodb": "^6.15.0",
+    "tsx": "^4.19.3"
+  }
+}
