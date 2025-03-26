@@ -1,10 +1,11 @@
 {
   "name": "mongodb-ig2i-final",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project has been made for the final assignment of the Data Storage & Processing course of IG2I.",
   "main": "index.ts",
   "scripts": {
-    "hello": "npx tsx scripts/hello.ts"
+    "hello": "npx tsx scripts/hello.ts",
+    "faker": "npx tsx scripts/faker_use.ts"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,9 @@
   "dependencies": {
     "mongodb": "^6.15.0",
     "tsx": "^4.19.3"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@faker-js/faker": "^9.6.0"
   }
 }
