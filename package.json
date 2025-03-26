@@ -19,5 +19,8 @@
   "dependencies": {
     "mongodb": "^6.15.0",
     "tsx": "^4.19.3"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.6.0"
   }
 }
