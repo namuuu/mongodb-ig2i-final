@@ -1,17 +1,8 @@
-import { faker } from '@faker-js/faker';
+import * as faker from '../faker/fakerHandler.ts'
 
-function generateUsers(quantity: number): MongoUser[] {
-    const userList: MongoUser[] = []; 
-
-    for (let i = 0; i<quantity; i++) {  
-        const user: MongoUser = {
-            id: i+1,
-            nom: faker.person.lastName(),
-        }
-
-        userList.push(user);
-    }
-    return userList;
+function main() {
+    console.log(faker.generateUsers(100));
 }
 
-console.log(generateUsers(100));
+main();
+
