@@ -1,3 +1,0 @@
-interface Identifier {
-    id: number;
-}
