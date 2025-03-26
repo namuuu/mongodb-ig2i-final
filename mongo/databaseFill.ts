@@ -1,4 +1,4 @@
-import { InsertManyResult, MongoClient } from "mongodb";
+import { InsertManyResult } from "mongodb";
 import * as MongoManager from "../mongoManager";
 import * as faker from "../faker/fakerHandler";
 
@@ -12,4 +12,6 @@ export async function fillDatabase() {
     const result: InsertManyResult = await collection.insertMany(listUser);
 
     console.log(`${result.insertedCount} documents were inserted`);
+
+    MongoManager.close();
 }
