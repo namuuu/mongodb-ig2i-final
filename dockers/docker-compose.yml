@@ -1,0 +1,63 @@
+networks:
+  internet-access:
+    attachable: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.0.0/24
+services:
+  shard-0:
+    image: mongo
+    container_name: shard-0
+    hostname: shard-0
+    privileged: true
+    ports:
+      - "27017"
+    volumes:
+      - ./shard-0:/mnt/data
+    command: mongod --config /mnt/data/config/mongod.conf --quiet
+    networks:
+      internet-access:
+        ipv4_address: 10.0.0.10
+ 
+  shard-1:
+    image: mongo
+    container_name: shard-1
+    hostname: shard-1
+    privileged: true
+    ports:
+      - "27017"
+    volumes:
+      - ./shard-1:/mnt/data
+    command: mongod --config /mnt/data/config/mongod.conf --quiet
+    networks:
+      internet-access:
+        ipv4_address: 10.0.0.11
+ 
+  config-0:
+    image: mongo
+    container_name: config-0
+    hostname: config-0
+    privileged: true
+    ports:
+      - "27017"
+    volumes:
+      - ./config-0:/mnt/data
+    command: mongod --config /mnt/data/config/mongod.conf --quiet
+    networks:
+      internet-access:
+        ipv4_address: 10.0.0.20
+ 
+  mongos-0:
+    image: mongo
+    container_name: mongos-0
+    hostname: mongos-0
+    privileged: true
+    ports:
+      - "27017"
+    volumes:
+      - ./mongos-0:/mnt/data
+    command: mongos --config /mnt/data/config/mongod.conf --quiet
+    networks:
+      internet-access:
+        ipv4_address: 10.0.0.30
