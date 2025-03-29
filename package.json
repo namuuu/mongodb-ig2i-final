@@ -8,7 +8,8 @@
     "faker": "npx tsx scripts/faker_use.ts",
     "fill": "npx tsx scripts/fillDatabase.ts",
     "insert": "npx tsx test_crud/insert.ts",
-    "search": "npx tsx test_crud/search.ts"
+    "search": "npx tsx test_crud/search.ts",
+    "delete": "npx tsx test_crud/delete.ts"
   },
   "repository": {
     "type": "git",

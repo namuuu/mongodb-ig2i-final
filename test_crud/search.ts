@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
 import moment from "moment";
 
-async function searchUsersWithA() {
+async function search() {
     const client = new MongoClient("mongodb://localhost:32772");
     await client.connect();
     const db = client.db("shard");
@@ -29,4 +29,4 @@ async function searchUsersWithA() {
 }
 
 // Exécuter la fonction
-searchUsersWithA().catch(console.error);
+search().catch(console.error);
