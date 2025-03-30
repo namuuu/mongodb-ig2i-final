@@ -1,21 +1,31 @@
-import { MongoClient } from 'mongodb';
-// import * as AddingMango from './addMongo';
-// import * as ReadingMango from './readMongo';
-import * as FillDatabase from './mongo/databaseFill';
+import { MongoClient } from "mongodb";
+import { connect, close } from "./config/database";
+import { fillDatabase } from "./mongo/databaseFill";
+import { insertPerfTest } from "./mongo/insertPerfTest";
+import { shardStatus } from "./mongo/shardStatus";
 
-const uri = "mongodb://localhost:27017";
-export const client = new MongoClient(uri);
 
-export const fill = FillDatabase;
-// export const read = ReadingMango;
-// export const edit = EditMango
-
-export async function connect() {
-    await client.connect();
-    await client.db("shard").command({ ping: 1 });
-    console.log("Connected successfully to server");
+export const fill = async () => {
+	const client = await connect();
+	await fillDatabase(client);
+	await close();
 }
 
-export function close() {
-    client.close();
+export const insertTest = async () => {
+	const client = await connect();
+	await insertPerfTest(client);
+	await close();
 }
+
+export const getShardStatus = async () => {
+	const client = await connect();
+	await shardStatus(client);
+	await close();
+}
+
+export const execute = async (callback: (client: MongoClient) => Promise<void>) => {
+	const client = await connect();
+	await callback(client);
+	await close();
+};
+
