@@ -8,6 +8,8 @@
     "faker": "npx tsx scripts/faker.ts",
     "fill": "npx tsx scripts/fill.ts",
     "insertTest": "npx tsx scripts/insertPerfTest.ts",
+    "updatePerfTest": "npx tsx scripts/updatePerfTest.ts",
+    "deletePerfTest": "npx tsx scripts/deletePerfTest.ts",
     "getShardStatus": "npx tsx scripts/getShardStatus.ts"
   },
   "repository": {
