@@ -9,7 +9,7 @@ import timer from "../utils/timer";
 
 export async function searchUniquePerfTest(client: MongoClient) {
 	// ça serait cool de faire de pouvoir le paramétrer
-	let userBatchPerTest = [100, 1000, 5000, 10000];
+	let userBatchPerTest = [10000000];
 	let results: { batchSize: number; meanTime: number }[] = [];
 	let numberOfTest = 5
 	for (const userBatch of userBatchPerTest) {
