@@ -13,7 +13,8 @@
     "getShardStatus": "npx tsx scripts/getShardStatus.ts",
     "searchUniqueTest": "npx tsx scripts/searchUniqueTest.ts",
     "searchGroupedTest": "npx tsx scripts/searchGroupedTest.ts",
-    "updateTest": "npx tsx scripts/updateTest.ts"
+    "updateTest": "npx tsx scripts/updateTest.ts",
+    "updateUniqueTest": "npx tsx scripts/updateUniqueTest.ts"
   },
   "repository": {
     "type": "git",
