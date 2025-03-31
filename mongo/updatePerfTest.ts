@@ -11,7 +11,7 @@ import timer from "../utils/timer";
 
 export async function updatePerfTest(client: MongoClient) {
 	// ça serait cool de faire de pouvoir le paramétrer
-	let userBatchPerTest = [10000000];
+	let userBatchPerTest = [100000];
 	let results: { batchSize: number; meanTime: number }[] = [];
 	let numberOfTest = 5
 	for (const userBatch of userBatchPerTest) {
@@ -28,7 +28,7 @@ export async function updatePerfTest(client: MongoClient) {
 				{ $set: { nom: faker.person.lastName() } }
 			);
 			timer.stop();
-			testTimes.push(timer.getDuration("ms"));
+			testTimes.push(timer.getDuration("s"));
 			console.log(`\tTest ${i + 1} : ${updateResult.modifiedCount} documents were updated in ${timer.getDuration("ms").toFixed(2)} ms`);
 		}
 
