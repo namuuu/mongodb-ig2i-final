@@ -12,8 +12,8 @@
     "deletePerfTest": "npx tsx scripts/deletePerfTest.ts",
     "getShardStatus": "npx tsx scripts/getShardStatus.ts",
     "searchUniqueTest": "npx tsx scripts/searchUniqueTest.ts",
-    "searchGroupedTest": "npx tsx scripts/searchGroupedTest.ts"
-
+    "searchGroupedTest": "npx tsx scripts/searchGroupedTest.ts",
+    "updateTest": "npx tsx scripts/updateTest.ts"
   },
   "repository": {
     "type": "git",
