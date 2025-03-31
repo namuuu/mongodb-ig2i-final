@@ -10,7 +10,10 @@
     "insertTest": "npx tsx scripts/insertPerfTest.ts",
     "updatePerfTest": "npx tsx scripts/updatePerfTest.ts",
     "deletePerfTest": "npx tsx scripts/deletePerfTest.ts",
-    "getShardStatus": "npx tsx scripts/getShardStatus.ts"
+    "getShardStatus": "npx tsx scripts/getShardStatus.ts",
+    "searchUniqueTest": "npx tsx scripts/searchUniqueTest.ts",
+    "searchGroupedTest": "npx tsx scripts/searchGroupedTest.ts"
+
   },
   "repository": {
     "type": "git",

@@ -13,17 +13,20 @@ export async function searchUniquePerfTest(client: MongoClient) {
 	let results: { batchSize: number; meanTime: number }[] = [];
 	let numberOfTest = 5
 	for (const userBatch of userBatchPerTest) {
+		console.log(`Test with ${userBatch} users :`);
 		const listUser: UserModel[] = faker.generateUsers(userBatch);
 		const collection = client.db(config.DB_NAME).collection(config.COLLECTION_NAME);
 		const testTimes: number[] = [];
-		console.log(`Test with ${userBatch} users :`);
+		await collection.deleteMany({});
+		const inserManyResult: InsertManyResult = await collection.insertMany(listUser);
 		for(let i = 0; i < numberOfTest; i++) {
-			await collection.deleteMany({});
-			const inserManyResult: InsertManyResult = await collection.insertMany(listUser);
+			const index = Math.floor(listUser.length/2);
 			timer.start();
+			const cursor = collection.find({id: listUser[index].id});
 			timer.stop();
 			testTimes.push(timer.getDuration("ms"));
-			console.log(`\tTest ${i + 1} : ${inserManyResult.insertedCount} documents were inserted in ${timer.getDuration("ms").toFixed(2)} ms`);
+			const result = await cursor.toArray();
+			console.log(`\tTest ${i + 1} : Found ${result.length} documents in ${timer.getDuration("ms").toFixed(2)} ms`);
 		}
 
 		const mean = testTimes.reduce((a, b) => a + b, 0) / testTimes.length;
