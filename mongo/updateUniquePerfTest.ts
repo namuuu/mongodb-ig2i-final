@@ -11,7 +11,7 @@ import timer from "../utils/timer";
 
 export async function updateUniquePerfTest(client: MongoClient) {
 	// ça serait cool de faire de pouvoir le paramétrer
-	let userBatchPerTest = [100000];
+	let userBatchPerTest = [config.BATCH_SIZE];
 	let results: { batchSize: number; meanTime: number }[] = [];
 	let numberOfTest = 5
 	for (const userBatch of userBatchPerTest) {

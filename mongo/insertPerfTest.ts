@@ -9,9 +9,9 @@ import timer from "../utils/timer";
 
 export async function insertPerfTest(client: MongoClient) {
 	// ça serait cool de faire de pouvoir le paramétrer
-	let userBatchPerTest = [100000];
+	let userBatchPerTest = [config.BATCH_SIZE];
 	let results: { batchSize: number; meanTime: number }[] = [];
-	let numberOfTest = 5
+	let numberOfTest = config.NB_TEST;
 	for (const userBatch of userBatchPerTest) {
 		const listUser: UserModel[] = faker.generateUsers(userBatch);
 		const collection = client.db(config.DB_NAME).collection(config.COLLECTION_NAME);
@@ -22,14 +22,14 @@ export async function insertPerfTest(client: MongoClient) {
 			timer.start();
 			const inserManyResult: InsertManyResult = await collection.insertMany(listUser);
 			timer.stop();
-			testTimes.push(timer.getDuration("s"));
-			console.log(`\tTest ${i + 1} : ${inserManyResult.insertedCount} documents were inserted in ${timer.getDuration("s").toFixed(2)} s`);
+			testTimes.push(timer.getDuration("ms"));
+			console.log(`\tTest ${i + 1} : ${inserManyResult.insertedCount} documents were inserted in ${timer.getDuration("ms").toFixed(2)} ms`);
 		}
 
 		const mean = testTimes.reduce((a, b) => a + b, 0) / testTimes.length;
 		results.push({ batchSize: userBatch, meanTime: mean });
 	
-		console.log(`\tMean time for ${userBatch} users: ${mean.toFixed(2)} s`);
+		console.log(`\tMean time for ${userBatch} users: ${mean.toFixed(2)} ms`);
 	}
 
 	// Afficher les résultats sous forme de matrice

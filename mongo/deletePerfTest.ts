@@ -8,9 +8,9 @@ import timer from "../utils/timer";
 
 
 export async function deletePerfTest(client: MongoClient) {
-	let userBatchPerTest = [100000];
+	let userBatchPerTest = [config.BATCH_SIZE];
 	let results: { batchSize: number; meanTime: number }[] = [];
-	let numberOfTest = 5
+	let numberOfTest = config.NB_TEST;
 	for (const userBatch of userBatchPerTest) {
 		const listUser: UserModel[] = faker.generateUsers(userBatch);
 		const collection = client.db(config.DB_NAME).collection(config.COLLECTION_NAME);

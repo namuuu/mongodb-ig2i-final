@@ -9,9 +9,9 @@ import timer from "../utils/timer";
 
 export async function searchUniquePerfTest(client: MongoClient) {
 	// ça serait cool de faire de pouvoir le paramétrer
-	let userBatchPerTest = [100000];
+	let userBatchPerTest = [config.BATCH_SIZE];
 	let results: { batchSize: number; meanTime: number }[] = [];
-	let numberOfTest = 5
+	let numberOfTest = config.NB_TEST;
 	for (const userBatch of userBatchPerTest) {
 		console.log(`Test with ${userBatch} users :`);
 		const listUser: UserModel[] = faker.generateUsers(userBatch);
