@@ -5,8 +5,16 @@
   "main": "index.ts",
   "scripts": {
     "hello": "npx tsx scripts/hello.ts",
-    "faker": "npx tsx scripts/faker_use.ts",
-    "fill": "npx tsx scripts/fillDatabase.ts"
+    "faker": "npx tsx scripts/faker.ts",
+    "fill": "npx tsx scripts/fill.ts",
+    "insertTest": "npx tsx scripts/insertPerfTest.ts",
+    "updatePerfTest": "npx tsx scripts/updatePerfTest.ts",
+    "deletePerfTest": "npx tsx scripts/deletePerfTest.ts",
+    "getShardStatus": "npx tsx scripts/getShardStatus.ts",
+    "searchUniqueTest": "npx tsx scripts/searchUniqueTest.ts",
+    "searchGroupedTest": "npx tsx scripts/searchGroupedTest.ts",
+    "updateTest": "npx tsx scripts/updateTest.ts",
+    "updateUniqueTest": "npx tsx scripts/updateUniqueTest.ts"
   },
   "repository": {
     "type": "git",
@@ -19,10 +27,12 @@
   },
   "homepage": "https://github.com/namuuu/mongodb-ig2i-final#readme",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "mongodb": "^6.15.0",
     "tsx": "^4.19.3"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.6.0"
+    "@faker-js/faker": "^9.6.0",
+    "@types/node": "^22.13.14"
   }
 }

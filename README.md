@@ -16,6 +16,13 @@ npm i tsx
 npm i mongodb
 npm install @faker-js/faker --save-dev
 ```
+After that, copy the **.env.example** file to a new file named **.env** and fill in the variables with your own values.
+```
+MONGO_URI="mongodb://localhost:27017"
+MONGO_DB="shard"
+COLLECTION_NAME="COLLECT_1"
+```
+
 And you should be all set up!
 To run the project, you can use the npm scripts. For example:
 ```
